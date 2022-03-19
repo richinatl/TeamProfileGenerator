@@ -41,7 +41,7 @@ Tests are written for jest to make sure the classes are being contructed properl
 
 ## Languages
 
-JavaScript running on node.js, CSS, HTML
+JavaScript running on node.js with an inquirer dependency, CSS, HTML
 
 ## Questions
 
