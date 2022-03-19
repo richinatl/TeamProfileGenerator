@@ -12,14 +12,12 @@ const htmlTemplate = (cards) => `
     
     <header>
       <h1>
-        Team Profile
+        My Team
       </h1>
     </header>
     <section>
-      <div class="grid">
-        <div class="card">   
+      <div class="grid">  
           ${cards}       
-        </div>
       </div>
     </section>
   </body>
