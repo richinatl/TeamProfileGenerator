@@ -5,10 +5,10 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
 
-const addNewManager = require("./src/generateManager");
-const addNewEngineer = require("./src/generateEngineer");
-const addNewIntern = require("./src/generateIntern");
-const generateHtml = require("./src/generateHtml");
+const managerHtml = require("./src/generateManager");
+const engineerHtml = require("./src/generateEngineer");
+const internHtml = require("./src/generateIntern");
+const template = require("./src/htmlTemplate");
 
 const team = [];
 
@@ -124,7 +124,7 @@ function ask(infoArray) {
 }
 
 function makeMembers(team) {
-  const teamMembers = team.map((member) => {
+  const profiles = team.map((member) => {
     const { name, id, email } = member;
 
     if (member.hasOwnProperty("phoneNumber")) {
@@ -143,25 +143,25 @@ function makeMembers(team) {
     }
   });
 
-  generateHtml(teamMembers);
+  generateHtml(profiles);
 }
 
-function generateHtml(teamMembers) {
+function generateHtml(profiles) {
   let teamCards = "";
-  teamMembers.forEach((profile) => {
+  profiles.forEach((profile) => {
     if (profile instanceof Manager) {
-      const card = addNewManager(profile);
+      const card = managerHtml(profile);
       teamCards += card;
     } else if (profile instanceof Engineer) {
-      const card = addNewEngineer(profile);
+      const card = engineerHtml(profile);
       teamCards += card;
     } else if (profile instanceof Intern) {
-      const card = addNewIntern(profile);
+      const card = internHtml(profile);
       teamCards += card;
     }
   });
 
-  const newHtml = generateHtml(teamCards);
+  const newHtml = template(teamCards);
 
   writeHtml(newHtml);
 }
@@ -169,6 +169,6 @@ function generateHtml(teamMembers) {
 function writeHtml(newHtml) {
   fs.writeFile("./dist/create.html", newHtml, (err) => {
     if (err) throw err;
-    console.log("Document successfully created, look in the /dist folder.");
+    console.log("HTML document successful, look in the /dist folder.");
   });
 }
