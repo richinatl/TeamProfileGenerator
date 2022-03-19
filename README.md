@@ -10,14 +10,14 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Licenses](#licenses)
-- [Contributors](#contributors)
+- [Contributing](#contributing)
 - [Tests](#tests)
 - [Questions](#questions)
 - [Credits](#credits)
 
 ## Description
 
-To use node.js to organize and build a team complete with the information you would need as a manager
+A node.js application to organize and build a team complete with all the information you would need as a manager
 
 ## Installation
 
@@ -25,19 +25,19 @@ npm i
 
 ## Usage
 
-Answer the questions after prompted on the command line, then you will find your completed team listing in the dist folder
+Answer the questions after you're prompted on the command line, then you will find your completed team listing in the dist folder
 
 ## Licenses
 
     This project is covered under the MIT license. To learn more click the license button at the top.
 
-## Contributors
+## Contributing
 
-undefined
+There aren't currently any contributors, contact me if you would like to do so
 
 ## Tests
 
-Tests are written for jest to make sure the classes are being contructed properly and that the properties of the objects are accessible
+Tests are written for jest to make sure the classes are being contructed properly and that the properties of the objects are accessible. To run tests use npm run test
 
 ## Languages
 
@@ -49,6 +49,6 @@ Have questions about this project?
  GitHub: https://github.com/richinatl  
  Email: richinatl@gmail.com
 
-## Credits
+### Credits
 
 Richard Murphy
